@@ -17,7 +17,7 @@ export default class MyApp extends App {
     return (
       <>
         <Head>
-          <title>Next.js Auth front-end</title>
+          <title>Next.js API Routes</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
