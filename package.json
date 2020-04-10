@@ -1,0 +1,24 @@
+{
+  "name": "auth-navbar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kvoncode/auth-navbar.git",
+  "author": "kvoncode <kvoncode@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "formik": "^2.1.4",
+    "next": "^9.3.4",
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
+  }
+}
