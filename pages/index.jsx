@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import useSWR from "swr";
+
+const fetcher = url => fetch(url).then(res => res.json())
+
 const StyledMain = styled.div`
   color: red;
   display: flex;
@@ -14,18 +18,36 @@ const StyledHeader = styled.h1`
   color: #fe8e7a;
 `;
 
-
 const StyledP = styled.p`
   max-width: 600px;
   line-height: 1.6;
   color: #2e284d;
 `;
 
+const People = () => {
+  const { data, error } = useSWR("/api", fetcher);
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
+  const names = data.map(el => (<p>{el.name}</p>))
+
+  return <div>{names}</div>;
+}
+
 const Main = () => {
+
+
+
   return (
     <StyledMain>
-      <StyledHeader>Front-end authentication forms</StyledHeader>
-      <StyledP>Task: create front-end forms using Formik and Next.js. After that we can use Next.js's lambda functions to make requests for simple login to MongoDB Atlas. After that we can use advanced login with JWT tokens and encryption. After that we can create custom authentication architecture similar to the current Google authentication using email, or product list with GraphQL and other business logic</StyledP>
+      <StyledHeader>API Route</StyledHeader>
+      <StyledP>
+        Task: Create API route and fetch data from it. Display list of data on
+        main page. Later on we can make api routes for mongodb requests
+      </StyledP>
+
+      <People></People>
     </StyledMain>
   );
 };
